@@ -8,7 +8,7 @@ where
     FS: Fn(&N) -> bool,
 {
     let mut visited: HashSet<N> = HashSet::new();
-    traverse(&start, &successors, &success, &mut visited)
+    success(&start) || traverse(&start, &successors, &success, &mut visited)
 }
 
 fn traverse<N, FN, IN, FS>(
