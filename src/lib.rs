@@ -51,4 +51,15 @@ mod tests {
             |&n| n == 16
         ));
     }
+
+    #[test]
+    fn circular() {
+        assert!(can_reach(
+            5,
+            |&n| vec![n - 1, n + 1]
+                .into_iter()
+                .filter(|&x| x <= 10 && x >= 0),
+            |&n| n == 10
+        ));
+    }
 }
